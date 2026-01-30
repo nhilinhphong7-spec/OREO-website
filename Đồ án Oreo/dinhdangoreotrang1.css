@@ -1,0 +1,273 @@
+@charset "utf-8";
+body 
+{
+    display: grid;
+    place-items: center; 
+    min-height: 100vh;
+    margin: 0;
+}
+.clear
+{
+	clear: both;
+}
+.wrapper
+{
+	width: 1000px;
+	margin: 0 auto;
+	height: 890px;
+}
+.header
+{
+	width: 1000px;
+	height: 465px;
+}
+.banner {
+    width: 1000px;          /* chiều ngang banner */
+    height: 560px;
+
+    margin: 0 auto;        /* căn giữa ngang */
+
+    background: url("images/banner.jpg") no-repeat center;
+    background-size: cover;
+
+    position: relative;    /* để đặt slogan bên trong nếu cần */
+	margin-bottom: 60px;
+}
+
+@font-face {
+    font-family: 'MyBaloo';
+    src: url('../fonts/Baloo2-Bold.ttf');
+}
+.slogan
+{
+	font-family: 'MyBaloo', sans-serif;
+    margin-top: 400px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+	position: absolute;
+    top: 50%;
+    left: 48%;   
+    transform: translate(-50%, -50%);
+
+    background: linear-gradient(
+        90deg,
+        #00f6ff,
+        #a855f7,
+        #ff6ec7,
+        #00f6ff
+    );
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: holo 5s linear infinite;
+}
+
+@keyframes holo {
+    0% { background-position: 0%; }
+    100% { background-position: 300%; }
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu-ngang {
+    width: 1000px;
+    height: 60px;
+    background:#322398;
+}
+
+.menu-ngang ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    list-style: none;
+}
+
+/* chia đều */
+.menu-ngang li {
+    flex: 1;
+}
+
+/* link phủ kín ô */
+.menu-ngang li a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+/* màu hồng lan hết */
+.menu-ngang li a:hover,
+.menu-ngang li.active a {
+    background: #F18CD1;
+    color: black;
+}
+.search-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* căn giữa cả cụm */
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* LOGO */
+.search-wrap img {
+  width: 55px;
+  height: auto;
+}
+
+/* SEARCH BOX */
+.search-box {
+  width: 500px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+
+  border: 2px solid #4a6fa5;
+  border-radius: 30px;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* INPUT – XOÁ KHUNG VUÔNG */
+.search-box input {
+  flex: 1;
+  height: 100%;
+
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+
+  padding: 0 20px;
+  font-size: 16px;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* INPUT KHI FOCUS */
+.search-box input:focus {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* NÚT SEARCH */
+.search-box button {
+  width: 60px;
+  height: 100%;
+
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* HIỆU ỨNG HOVER */
+.search-box:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.product-section {
+    width: 100%;
+    padding: 40px 0;
+    background: #fff;
+}
+
+.product-grid {
+    width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+	margin-top: 350px;
+}
+
+.product-item {
+    background: #f3f8f9;
+    border-radius: 25px;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.product-item img {
+    max-width: 100%;
+    height: 220px;
+    object-fit: contain;
+}
+#lightbox {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+
+    background: linear-gradient(
+        120deg,
+        #00f5ff,
+        #a855f7,
+        #ff7ad9,
+        #00ffcc
+    );
+    background-size: 400% 400%;
+    animation: hologramBG 8s ease infinite;
+
+    backdrop-filter: blur(8px);
+}
+
+/* ẢNH PHÓNG TO */
+#lightbox img {
+    max-width: 75%;
+    max-height: 75%;
+    border-radius: 22px;
+
+    box-shadow:
+        0 0 25px rgba(255,255,255,0.6),
+        0 0 60px rgba(168,85,247,0.8),
+        0 0 120px rgba(0,245,255,0.6);
+
+    animation: zoomHolo 0.35s ease;
+}
+
+/* animation nền hologram */
+@keyframes hologramBG {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* animation zoom ảnh */
+@keyframes zoomHolo {
+    from {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* hover ảnh ban đầu */
+.product-item img {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(168,85,247,0.4);
+}

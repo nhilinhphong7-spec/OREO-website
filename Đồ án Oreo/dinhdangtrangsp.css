@@ -1,0 +1,119 @@
+@charset "utf-8";
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background:radial-gradient(circle at 20% 30%, #5f2cff55, transparent 40%),
+    radial-gradient(circle at 80% 70%, #00d4ff55, transparent 40%),
+    linear-gradient(135deg, #050b2e, #0a1a4f, #120a3d);
+  background-size: 200% 200%;
+  animation: spaceMove 12s ease infinite;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shop {
+  display: flex;
+  gap: 30px;
+}
+
+.card {
+  background:linear-gradient(
+  135deg,
+    #ff9a9e,
+    #fad0c4,
+    #fbc2eb,
+    #a6c1ee,
+    #84fab0,
+    #8fd3f4
+  );
+  width: 260px;
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  margin: 10px 0;
+}
+
+.card h3 {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 10px 0;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #2fe6c8;
+  color: #003b32;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+/* Nút mũi tên */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 22px;
+  z-index: 10;
+}
+
+.arrow.left { left: -20px; }
+.arrow.right { right: -20px; }
+
+.arrow:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.1);
+}
+.arrow {
+  position: fixed;
+  right: 30px;
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.85);
+}
+
+.arrow.left {
+  left: 20px;
+}
+
+.arrow.right {
+  right: 20px;
+}
+@keyframes holo {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
